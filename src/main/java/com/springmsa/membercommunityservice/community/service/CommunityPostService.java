@@ -1,7 +1,7 @@
-package com.springmsa.membercommunityservice.api.service;
+package com.springmsa.membercommunityservice.community.service;
 
-import com.springmsa.membercommunityservice.api.dto.CommunityPostRequest;
-import com.springmsa.membercommunityservice.api.dto.CommunityPostResponse;
+import com.springmsa.membercommunityservice.community.dto.CommunityPostRequest;
+import com.springmsa.membercommunityservice.community.dto.CommunityPostResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;

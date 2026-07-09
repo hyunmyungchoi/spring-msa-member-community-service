@@ -1,4 +1,4 @@
-package com.springmsa.membercommunityservice.api.service;
+package com.springmsa.membercommunityservice.community.service;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.jwt.Jwt;

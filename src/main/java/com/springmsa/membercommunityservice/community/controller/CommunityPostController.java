@@ -1,8 +1,8 @@
-package com.springmsa.membercommunityservice.api.controller;
+package com.springmsa.membercommunityservice.community.controller;
 
-import com.springmsa.membercommunityservice.api.dto.CommunityPostRequest;
-import com.springmsa.membercommunityservice.api.dto.CommunityPostResponse;
-import com.springmsa.membercommunityservice.api.service.CommunityPostService;
+import com.springmsa.membercommunityservice.community.dto.CommunityPostRequest;
+import com.springmsa.membercommunityservice.community.dto.CommunityPostResponse;
+import com.springmsa.membercommunityservice.community.service.CommunityPostService;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.DeleteMapping;

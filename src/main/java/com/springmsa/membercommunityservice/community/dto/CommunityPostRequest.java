@@ -1,4 +1,4 @@
-package com.springmsa.membercommunityservice.api.dto;
+package com.springmsa.membercommunityservice.community.dto;
 
 public record CommunityPostRequest(String title, String content) {
 }
