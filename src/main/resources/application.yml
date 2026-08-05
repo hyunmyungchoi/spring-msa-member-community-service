@@ -4,6 +4,10 @@ server:
 spring:
   application:
     name: spring-member-community-service
+  flyway:
+    default-schema: community_service
+    schemas: community_service
+    create-schemas: true
   kafka:
     bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
     producer:
