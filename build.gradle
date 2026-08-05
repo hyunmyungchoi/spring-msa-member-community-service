@@ -15,8 +15,8 @@ java {
 }
 
 dependencies {
-    implementation 'com.springmsa:spring-msa-common-kafka:0.0.1-SNAPSHOT'
-    implementation 'com.springmsa:spring-msa-common-web:0.0.1-SNAPSHOT'
+    implementation 'com.springmsa:spring-msa-common-kafka:0.1.0'
+    implementation 'com.springmsa:spring-msa-common-web:0.1.0'
     implementation 'org.springframework.kafka:spring-kafka'
     implementation 'org.springframework.boot:spring-boot-starter-webmvc'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
@@ -63,3 +63,4 @@ tasks.register('repairDatabase', JavaExec) {
 dependencyLocking {
     lockAllConfigurations()
 }
+
