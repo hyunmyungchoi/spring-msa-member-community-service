@@ -51,6 +51,15 @@ tasks.register('migrateDatabase', JavaExec) {
     mainClass = 'com.springmsa.membercommunityservice.migration.FlywayMigrationMain'
 }
 
+tasks.register('repairDatabase', JavaExec) {
+    group = 'database'
+    description = 'Repairs Flyway migration metadata for the community_service schema.'
+    dependsOn tasks.named('classes')
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.springmsa.membercommunityservice.migration.FlywayMigrationMain'
+    args 'repair'
+}
+
 dependencyLocking {
     lockAllConfigurations()
 }
