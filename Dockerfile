@@ -2,11 +2,14 @@ FROM eclipse-temurin:17-jdk-alpine@sha256:638937c54b6d63f0973a20501973e7c433a36b
 
 WORKDIR /workspace
 
-COPY gradlew gradlew
-COPY gradle gradle
-COPY build.gradle settings.gradle gradle.lockfile ./
-COPY src src
+COPY spring-member-community-service/gradlew spring-member-community-service/gradlew
+COPY spring-member-community-service/gradle spring-member-community-service/gradle
+COPY spring-member-community-service/build.gradle spring-member-community-service/settings.gradle spring-member-community-service/gradle.lockfile spring-member-community-service/
+COPY spring-member-community-service/src spring-member-community-service/src
+COPY spring-msa-common-web spring-msa-common-web
+COPY spring-msa-common-kafka spring-msa-common-kafka
 
+WORKDIR /workspace/spring-member-community-service
 RUN sed -i 's/\r$//' gradlew \
     && chmod +x gradlew \
     && ./gradlew clean bootJar -x test --no-daemon
@@ -21,7 +24,7 @@ WORKDIR /app
 
 RUN apk add --no-cache curl
 
-COPY --from=build /workspace/app.jar app.jar
+COPY --from=build /workspace/spring-member-community-service/app.jar app.jar
 
 ENV SPRING_PROFILES_ACTIVE=docker
 ENV JAVA_TOOL_OPTIONS="-XX:+UseContainerSupport -XX:MaxRAMPercentage=70 -XX:InitialRAMPercentage=30"
