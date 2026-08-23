@@ -37,6 +37,7 @@ public class CommunityPostService {
     public CommunityPostResponse create(CommunityPostRequest request, String ownerSub, String author) {
         CommunityPost post = CommunityPost.create(ownerSub, author, request.title(), request.content());
         CommunityPost savedPost = repository.save(post);
+
         MsaEventEnvelope<CommunityPostCreatedEvent> event = MsaEventEnvelope.create(
                 "community.post-created", 1, "spring-member-community-service", savedPost.getCreatedAt(),
                 new CommunityPostCreatedEvent(
